@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospitality & Convention Management Final Exam Study Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --isu-red: #c8102e;
+            --isu-light-red: #f9f2f3;
+            --dark-text: #333;
+            --light-bg: #f9f9f9;
+            --border-color: #ddd;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: #fff;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            transition: background-color 0.3s ease;
+        }
+        
+        .header-bar {
+            background-color: var(--isu-red);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-bar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: skewX(-20deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { left: -50%; }
+            100% { left: 150%; }
+        }
+        
+        h1 {
+            color: white;
+            margin: 0;
+            padding: 0;
+            font-size: 32px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        h2 {
+            color: var(--isu-red);
+            border-left: 5px solid var(--isu-red);
+            padding-left: 15px;
+            margin-top: 40px;
+            font-size: 28px;
+            position: relative;
+        }
+        
+        h3 {
+            color: #555;
+            margin-top: 25px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+            font-size: 22px;
+        }
+        
+        .topic-container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--isu-red);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .topic-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        
+        .tip {
+            background-color: var(--isu-light-red);
+            border-left: 5px solid var(--isu-red);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .tip::before {
+            content: "💡";
+            position: absolute;
+            left: -15px;
+            top: -15px;
+            background-color: var(--isu-red);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        
+        .key-point {
+            font-weight: bold;
+            color: var(--isu-red);
+            background-color: rgba(200, 16, 46, 0.05);
+            padding: 0 3px;
+        }
+        
+        .practice-question {
+            background-color: var(--light-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .practice-question:hover {
+            transform: scale(1.01);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .question {
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .question::before {
+            content: "Q";
+            display: inline-block;
+            background-color: var(--isu-red);
+            color: white;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            text-align: center;
+            margin-right: 10px;
+            font-weight: bold;
+            line-height: 28px;
+        }
+        
+        .show-answer-btn {
+            cursor: pointer;
+            display: inline-block;
+            background-color: var(--isu-red);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 16px;
+            border: none;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            margin-top: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .show-answer-btn:hover {
+            background-color: #b30d29;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .show-answer-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .show-answer-btn i {
+            margin-right: 8px;
+        }
+        
+        .answer {
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 4px solid var(--isu-red);
+            background-color: var(--isu-light-red);
+            border-radius: 0 8px 8px 0;
+            display: none;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .answer.show {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .answer::before {
+            content: "A";
+            position: absolute;
+            left: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--isu-red);
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            text-align: center;
+            font-weight: bold;
+            line-height: 24px;
+        }
+        
+        .nav-container {
+            background-color: var(--light-bg);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            backdrop-filter: blur(5px);
+            background-color: rgba(249,249,249,0.9);
+        }
+        
+        .nav-container a {
+            color: var(--isu-red);
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 5px;
+            display: inline-block;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .nav-container a:hover {
+            background-color: var(--isu-light-red);
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container a.active {
+            background-color: var(--isu-red);
+            color: white;
+        }
+        
+        .highlight-box {
+            background-color: var(--isu-light-red);
+            border-left: 5px solid var(--isu-red);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .footer {
+            background-color: var(--isu-red);
+            color: white;
+            text-align: right;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 30px;
+            font-size: 16pt;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer img {
+            height: 40px;
+        }
+        
+        .back-to-top {
+            display: inline-block;
+            background-color: var(--isu-red);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: #b30d29;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: #f1f1f1;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1001;
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: var(--isu-red);
+            width: 0%;
+        }
+        
+        .topic-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .topic-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border-top: 4px solid var(--isu-red);
+        }
+        
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .topic-card h4 {
+            margin-top: 0;
+            color: var(--isu-red);
+            font-size: 18px;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .topic-card h4 i {
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+        
+        .topic-card p {
+            margin-bottom: 0;
+            flex-grow: 1;
+        }
+        
+        .topic-card a {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--isu-red);
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s ease;
+        }
+        
+        .topic-card a:hover {
+            transform: translateX(5px);
+        }
+        
+        /* Dark mode toggle */
+        .theme-toggle {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+            background-color: var(--isu-red);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+        }
+        
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #eaeaea;
+        }
+        
+        body.dark-mode .topic-container,
+        body.dark-mode .topic-card,
+        body.dark-mode .practice-question {
+            background-color: #1e1e1e;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        body.dark-mode .nav-container {
+            background-color: rgba(30,30,30,0.9);
+        }
+        
+        body.dark-mode .answer {
+            background-color: #2a1215;
+        }
+        
+        body.dark-mode .tip,
+        body.dark-mode .highlight-box {
+            background-color: #2a1215;
+        }
+
+        /* Progress tracker styling */
+        .progress-tracker {
+            margin: 30px 0;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .progress-header {
+            background-color: var(--isu-red);
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .progress-body {
+            padding: 20px;
+            background-color: var(--light-bg);
+        }
+        
+        .progress-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .progress-item label {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        
+        .progress-bar-container {
+            margin-top: 20px;
+            background-color: #e0e0e0;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .progress-bar-fill {
+            height: 100%;
+            background-color: var(--isu-red);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        .progress-percentage {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .topic-overview {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-container {
+                padding: 10px;
+                overflow-x: auto;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .nav-container a {
+                padding: 8px 12px;
+                margin: 2px;
+            }
+            
+            .header-bar {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .topic-container,
+            .practice-question {
+                padding: 15px;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .nav-container, 
+            .back-to-top, 
+            .theme-toggle,
+            .progress-container,
+            .show-answer-btn {
+                display: none !important;
+            }
+            
+            .answer {
+                display: block !important;
+                background-color: #f9f9f9 !important;
+                color: black !important;
+            }
+            
+            .topic-container,
+            .practice-question {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                border: 1px solid #ddd !important;
+                box-shadow: none !important;
+            }
+            
+            body {
+                background-color: white !important;
+                color: black !important;
+            }
+            
+            a {
+                color: black !important;
+                text-decoration: none !important;
+            }
+            
+            .header-bar {
+                background-color: white !important;
+                color: black !important;
+                border: 1px solid #ddd !important;
+                box-shadow: none !important;
+            }
+            
+            h1 {
+                color: black !important;
+            }
+            
+            .footer {
+                background-color: white !important;
+                color: black !important;
+                border: 1px solid #ddd !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress bar at top of window -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="header-bar">
+        <h1>Hospitality & Convention Management Final Exam Study Guide</h1>
+    </div>
+
+    <div class="tip">
+        <p><strong>Study Tip:</strong> Don't just memorize answers! Understanding the concepts and reasoning behind them will help you apply this knowledge in real-world situations and perform better on your exam.</p>
+        <p><strong>How to Use This Guide:</strong> Click on topic areas in the navigation bar below to jump to different sections. For practice questions, click "Show Answer" to check your knowledge.</p>
+    </div>
+
+    <div class="nav-container" id="navBar">
+        <a href="#overview" class="nav-link"><i class="fas fa-home"></i> Overview</a>
+        <a href="#sales-marketing" class="nav-link"><i class="fas fa-chart-line"></i> Sales & Marketing</a>
+        <a href="#hotel-operations" class="nav-link"><i class="fas fa-hotel"></i> Hotel Operations</a>
+        <a href="#convention-management" class="nav-link"><i class="fas fa-users"></i> Convention Management</a>
+        <a href="#function-rooms" class="nav-link"><i class="fas fa-door-open"></i> Function Rooms</a>
+        <a href="#food-beverage" class="nav-link"><i class="fas fa-utensils"></i> Food & Beverage</a>
+        <a href="#contracts" class="nav-link"><i class="fas fa-file-contract"></i> Contracts</a>
+        <a href="#association-meetings" class="nav-link"><i class="fas fa-handshake"></i> Association Meetings</a>
+        <a href="#exhibits" class="nav-link"><i class="fas fa-booth-curtain"></i> Exhibits</a>
+        <a href="#property-analysis" class="nav-link"><i class="fas fa-search"></i> Property Analysis</a>
+        <a href="#practice-questions" class="nav-link"><i class="fas fa-question-circle"></i> Practice Questions</a>
+    </div>
+
+    <!-- Progress Tracker -->
+    <div class="progress-tracker" id="progressTracker">
+        <div class="progress-header">
+            <h3 style="margin: 0; color: white;">Study Progress Tracker</h3>
+            <span id="resetProgress" style="cursor: pointer; text-decoration: underline;">Reset Progress</span>
+        </div>
+        <div class="progress-body">
+            <div class="progress-item">
+                <input type="checkbox" id="topic1" class="progress-checkbox">
+                <label for="topic1">Sales and Marketing Concepts</label>
+            </div>
+            <div class="progress-item">
+                <input type="checkbox" id="topic2" class="progress-checkbox">
+                <label for="topic2">Hotel Operations and Accommodations</label>
+            </div>
+            <div class="progress-item">
+                <input type="checkbox" id="topic3" class="progress-checkbox">
+                <label for="topic3">Convention and Meeting Management</label>
+            </div>
+            <div class="progress-item">
+                <input type="checkbox" id="topic4" class="progress-checkbox">
+                <label for="topic4">Function Rooms and Event Space</label>
+            </div>
+            <div class="progress-item">
+                <input type="checkbox" id="topic5" class="progress-checkbox">
+                <label for="topic5">Food and Beverage Service</label>
+            </div>
+            <div class="progress-item">
+                <input type="checkbox" id="topic6" class="progress-checkbox">
+                <label for="topic6">Contract and Financial Management</label>
+            </div>
+            <div class="progress-item">
+                <input type="checkbox" id="topic7" class="progress-checkbox">
+                <label for="topic7">Association Meetings</label>
+            </div>
+            <div class="progress-item">
+                <input type="checkbox" id="topic8" class="progress-checkbox">
+                <label for="topic8">Exhibit and Trade Show Management</label>
+            </div>
+            <div class="progress-item">
+                <input type="checkbox" id="topic9" class="progress-checkbox">
+                <label for="topic9">Property Analysis and Selection</label>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="progressBarFill"></div>
+            </div>
+            <div class="progress-percentage" id="progressPercentage">0% Complete</div>
+        </div>
+    </div>
+
+    <!-- Overview Section with Topic Cards -->
+    <div id="overview" class="topic-container">
+        <h2>Study Guide Overview</h2>
+        <p>This study guide covers all the essential topics for your Hospitality & Convention Management final exam. Use the topic cards below to quickly navigate to different sections.</p>
+        
+        <div class="topic-overview">
+            <div class="topic-card">
+                <h4><i class="fas fa-chart-line"></i> Sales & Marketing</h4>
+                <p>Bridge statements, marketing plans, sales techniques, and objection handling.</p>
+                <a href="#sales-marketing">Study This Topic →</a>
+            </div>
+            
+            <div class="topic-card">
+                <h4><i class="fas fa-hotel"></i> Hotel Operations</h4>
+                <p>Room rates, occupancy periods, overbooking practices, and room holds.</p>
+                <a href="#hotel-operations">Study This Topic →</a>
+            </div>
+            
+            <div class="topic-card">
+                <h4><i class="fas fa-users"></i> Convention Management</h4>
+                <p>Service management, meeting types, incentive meetings, and pre-convention planning.</p>
+                <a href="#convention-management">Study This Topic →</a>
+            </div>
+            
+            <div class="topic-card">
+                <h4><i class="fas fa-door-open"></i> Function Rooms</h4>
+                <p>Room rates, setup principles, furniture requirements, and non-traditional spaces.</p>
+                <a href="#function-rooms">Study This Topic →</a>
+            </div>
+            
+            <div class="topic-card">
+                <h4><i class="fas fa-utensils"></i> Food & Beverage</h4>
+                <p>Banquet profitability, service styles, billing components, and food trends.</p>
+                <a href="#food-beverage">Study This Topic →</a>
+            </div>
+            
+            <div class="topic-card">
+                <h4><i class="fas fa-file-contract"></i> Contracts</h4>
+                <p>Agreements, standardized contracts, billing authorization, and financial calculations.</p>
+                <a href="#contracts">Study This Topic →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sales and Marketing Section -->
+    <div id="sales-marketing" class="topic-container">
+        <h2>Sales and Marketing Concepts</h2>
+
+        <h3>Bridge Statements in Sales</h3>
+        <p>A bridge statement is often used in the opening of a personal sales call to lead into the main body of the presentation. It serves as a transition that connects the introduction to the main content of your pitch.</p>
+
+        <h3>Sales vs. Marketing</h3>
+        <p>Sales and marketing are related but distinct concepts:</p>
+        <ul>
+            <li><span class="key-point">Marketing includes sales but is more comprehensive</span>, encompassing market research, product development, pricing strategy, promotion, and distribution.</li>
+            <li>Marketing has a broader scope focused on identifying and meeting customer needs, while sales focuses specifically on converting prospects to customers.</li>
+        </ul>
+
+        <h3>Sales Techniques</h3>
+        <p>Personal sales calls offer the most detailed presentation opportunity and allow the salesperson to see the prospect's full reaction and respond immediately to the negotiating situation. This direct interaction provides advantages over telephone selling or working through convention bureaus.</p>
+
+        <h3>Objection Handling</h3>
+        <p>When a meeting planner states "We are happy with our present hotel" during a sales call, this indicates a <span class="key-point">lack-of-interest objection</span>. Recognizing this type of objection helps salespeople develop appropriate responses.</p>
+
+        <h3>Marketing Plan Development</h3>
+        <p>After conducting market research, the next step in developing a marketing plan is to <span class="key-point">set marketing objectives</span>. This establishes the goals that will guide subsequent strategies and actions.</p>
+    </div>
+
+    <!-- Hotel Operations Section -->
+    <div id="hotel-operations" class="topic-container">
+        <h2>Hotel Operations and Accommodations</h2>
+
+        <h3>Hotel Overbooking</h3>
+        <p>Hotels typically overbook rooms because of potential no-shows and people who leave without paying their bills. Understanding this practice helps meeting planners prepare contingency plans.</p>
+
+        <h3>Room Rate Structures</h3>
+        <p>Small groups booking a meeting at a hotel during high-occupancy periods (like in October) would most likely receive a <span class="key-point">run-of-the-house rate</span> rather than discounted rates. Hotel pricing varies based on demand periods.</p>
+
+        <h3>Occupancy Periods and Pricing</h3>
+        <p>Hotels can charge the highest prices during <span class="key-point">peak occupancy periods</span>. Other occupancy periods include:</p>
+        <ul>
+            <li><strong>Shoulder</strong> - periods immediately before and after peak</li>
+            <li><strong>Valley</strong> - low demand periods</li>
+            <li><strong>Foothill</strong> - transitional periods</li>
+        </ul>
+        <p>Understanding these cycles helps with strategic event scheduling and budget planning.</p>
+
+        <h3>Room Rate Calculations</h3>
+        <p>If a hotel increases room rates by 5% annually, a $150 discounted room rate this year will become $157.50 next year. Understanding how to calculate rate increases helps with budgeting for future events.</p>
+
+        <h3>Room Holds</h3>
+        <p>Properties limit the length of room holds by designating an <span class="key-point">option date</span> to avoid losing potential business while protecting tentative bookings. This practice balances the hotel's need to maximize occupancy with meeting planners' need for flexibility.</p>
+    </div>
+
+    <!-- Convention Management Section -->
+    <div id="convention-management" class="topic-container">
+        <h2>Convention and Meeting Management</h2>
+
+        <h3>Convention Service Management</h3>
+        <p>For large and complex conventions, convention service managers should assume primary hotel contact person responsibilities <span class="key-point">after the sale is made</span>, not before the meeting planner books the hotel.</p>
+
+        <h3>Meeting Types</h3>
+        <p>Corporate meetings include sales meetings, new product meetings, professional/technical meetings, and management meetings. These differ from association, religious, or non-profit meetings in terms of planning approach and objectives.</p>
+
+        <h3>Incentive Meetings</h3>
+        <p>Incentive meetings are specifically designed as <span class="key-point">rewards for excellent performance</span> in a company. They differ from other corporate meetings in their purpose and usually offer more premium experiences.</p>
+
+        <h3>Pre-Convention Meetings</h3>
+        <p>A pre-convention meeting is held to introduce key hotel personnel to group officials, review the convention agenda, and address detailed arrangements. This meeting is crucial for ensuring all parties are aligned before the event begins.</p>
+
+        <h3>Corporate Meeting Business</h3>
+        <p>All other factors being equal, properties with the <span class="key-point">best food service</span> are likely to get the most corporate meeting business. Food quality remains a key differentiator for meeting venues.</p>
+    </div>
+
+    <!-- Function Rooms Section -->
+    <div id="function-rooms" class="topic-container">
+        <h2>Function Rooms and Event Space</h2>
+
+        <h3>Function Room Rates</h3>
+        <p>Rates for function rooms are determined by multiple factors, including:</p>
+        <ul>
+            <li>Total food and beverage spend</li>
+            <li>Number of sleeping rooms booked</li>
+            <li>Ceiling height and location of pillars</li>
+            <li>Overall space requirements</li>
+        </ul>
+
+        <h3>Function Room Setup Principles</h3>
+        <p>Hotel staff should understand the <span class="key-point">"five feet principle"</span> and <span class="key-point">"two by eight principle"</span> related to the orientation of a screen on a platform in the front of a meeting room and determining seating capacity and screen placement. These guidelines help ensure proper room setup for presentations.</p>
+
+        <h3>Meeting Room Requirements</h3>
+        <p>When evaluating meeting spaces, planners should consider whether rooms are free from distractions, as this significantly impacts meeting effectiveness and attendee concentration.</p>
+
+        <h3>Non-Traditional Function Spaces</h3>
+        <p>Swimming pool areas can be used as space for cocktail parties, illustrating that areas not traditionally thought of as function rooms can serve as functional event spaces when properly prepared.</p>
+
+        <h3>Function Room Furniture</h3>
+        <p>When considering function room furniture, <span class="key-point">flexibility</span> is more important than ease of disposal, handling, or storage. Adaptable furniture allows venues to quickly reconfigure spaces for different event needs.</p>
+    </div>
+
+    <!-- Food and Beverage Section -->
+    <div id="food-beverage" class="topic-container">
+        <h2>Food and Beverage Service</h2>
+
+        <h3>Banquet Profitability</h3>
+        <p>Banquets are the most profitable area of the Food and Beverage department because of:</p>
+        <ul>
+            <li>Flexibility in pricing</li>
+            <li>Higher employee production</li>
+            <li>High beverage profits</li>
+            <li>Predictable attendance and service requirements</li>
+        </ul>
+
+        <h3>Banquet Service Styles</h3>
+        <p>The most common form of banquet service is <span class="key-point">American/plated service</span>, where pre-plated food is served directly to seated guests. Other options include Russian, English/family style, and buffet service.</p>
+        
+        <h3>Food and Beverage Billing Components</h3>
+        <p>In the Food and Beverage (F&B) industry, the price per person is often denoted as "price, plus, plus" ($++). The two billing components that refer to "plus, plus" are <span class="key-point">tax and service charge</span>. Understanding these components is essential for accurate budgeting and pricing.</p>
+
+        <h3>Food Trends</h3>
+        <p>Current food trends in the hospitality industry include:</p>
+        <ul>
+            <li>Healthy options</li>
+            <li>Lighter options</li>
+            <li>Energy-type foods served during breaks</li>
+            <li>Accommodations for dietary restrictions</li>
+        </ul>
+
+        <h3>Beverage Pricing</h3>
+        <p>If a group consumes five bottles of gin during a reception and opens one more before it ends, with each bottle costing $35, the total charge will be $210 (6 bottles × $35). Understanding beverage pricing helps in budget planning.</p>
+    </div>
+
+    <!-- Contracts Section -->
+    <div id="contracts" class="topic-container">
+        <h2>Contract and Financial Management</h2>
+
+        <h3>Contracts and Letters of Agreement</h3>
+        <p>A contract or letter of agreement protects <span class="key-point">both the hotel and the meeting group</span> in case of disputes over services. Clear written agreements prevent misunderstandings about responsibilities and expectations.</p>
+
+        <h3>Standardized Contracts</h3>
+        <p>Standardized contracts are criticized by some meeting planners who feel that every event is unique and requires customized terms. However, they are most often used for large meetings due to the longer lead times typically involved.</p>
+
+        <h3>Master Account Billing Authorization</h3>
+        <p>The master account billing authorization form, when completed, specifies the limit of financial responsibility a meeting group will accept for its functions. This document is crucial for clarifying payment obligations.</p>
+
+        <h3>Financial Calculations</h3>
+        <p>When calculating costs for events, it's important to understand how charges like beverage consumption are determined, usually based on actual consumption rather than estimates.</p>
+    </div>
+
+    <!-- Association Meetings Section -->
+    <div id="association-meetings" class="topic-container">
+        <h2>Association Meetings</h2>
+
+        <h3>Association Meeting Planners</h3>
+        <p>For association meeting planners, key considerations include:</p>
+        <ul>
+            <li>Adequate meeting space</li>
+            <li>Sufficient guest rooms</li>
+            <li>Adequate exhibit space</li>
+        </ul>
+        <p>These factors typically outweigh proximity to shopping and entertainment.</p>
+
+        <h3>Association Attendance</h3>
+        <p>Attendance at association meetings is generally <span class="key-point">not required</span>. Unlike corporate meetings, association events typically involve voluntary participation by members.</p>
+
+        <h3>Association Revenue Sources</h3>
+        <p>Associations earn money from conventions through:</p>
+        <ul>
+            <li>Exhibitions</li>
+            <li>Registration fees</li>
+            <li>Selling advertisements in convention programs</li>
+        </ul>
+        <p>However, they typically do not earn money through bed taxes.</p>
+
+        <h3>Similarities Between Markets</h3>
+        <p>The nonprofit organization market and the associations meeting market share similarities:</p>
+        <ul>
+            <li>Both have members</li>
+            <li>Both are nonprofit</li>
+            <li>Both exist to accomplish a purpose</li>
+        </ul>
+        <p>However, they differ in ease of location through central sources.</p>
+    </div>
+
+    <!-- Exhibits Section -->
+    <div id="exhibits" class="topic-container">
+        <h2>Exhibit and Trade Show Management</h2>
+
+        <h3>Exhibit Booth Types</h3>
+        <p>An exhibit booth with aisles on all four sides is called an <span class="key-point">island booth</span>. Other booth types include perimeter, standard, and peninsula configurations.</p>
+
+        <h3>Trade Show Management</h3>
+        <p>The trade show manager is responsible for developing a list of potential exhibitors, marketing the show to exhibitors and attendees, and contracting with exposition service contractors. This role requires extensive coordination skills.</p>
+        
+        <h3>Exhibitor Concerns</h3>
+        <p>Exhibitors are commonly concerned about how exhibit hours are scheduled. They typically feel that <span class="key-point">delegates should have free time from meetings during the day to browse through the exhibit area</span>. This preference influences exhibition scheduling and impacts overall convention planning.</p>
+
+        <h3>Convention Coordinators</h3>
+        <p>The convention coordinator typically assists with servicing small meeting groups and supports the convention service manager. This position requires understanding both hotel operations and meeting planning needs.</p>
+    </div>
+
+    <!-- Property Analysis Section -->
+    <div id="property-analysis" class="topic-container">
+        <h2>Property Analysis and Selection</h2>
+
+        <h3>CVB Operations</h3>
+        <p>When a Convention and Visitors Bureau (CVB) learns that a group has selected its city for a meeting, it typically sends <span class="key-point">convention lead forms to member hotels</span>. This helps distribute business opportunities among local accommodations.</p>
+
+        <h3>Positive Publicity</h3>
+        <p>What lends credibility to a property in the eyes of the public is when the <span class="key-point">source of publicity appears to be an impartial third party</span>. Third-party endorsements carry more weight than self-promotion.</p>
+
+        <h3>Property Analysis Questions</h3>
+        <p>When conducting property analyses to attract meeting business, hospitality managers should ask questions about transportation services, meeting room quality, and staff training. The organization chart's simplicity is less critical to meeting planners.</p>
+    </div>
+
+    <!-- Practice Questions Section -->
+    <div id="practice-questions" class="topic-container">
+        <h2>Practice Questions</h2>
+        <p>Test your knowledge with these practice questions! Think about each answer first, then click "Show Answer" to check.</p>
+
+        <h3>Sales and Marketing Questions</h3>
+
+        <!-- Question 1 -->
+        <div class="practice-question">
+            <div class="question">What is the purpose of a bridge statement in a personal sales call?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">To lead into the main body of the presentation</div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="practice-question">
+            <div class="question">What is the next step after conducting market research in developing a marketing plan?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">Setting marketing objectives</div>
+        </div>
+
+        <h3>Hotel Operations and Accommodations Questions</h3>
+
+        <!-- Question 3 -->
+        <div class="practice-question">
+            <div class="question">Why do hotels typically overbook rooms?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">Because of no-shows and people who leave without paying their bills</div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="practice-question">
+            <div class="question">What rate would a small group booking a meeting at a hotel in October (high occupancy) most likely receive?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">A run-of-the-house rate</div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="practice-question">
+            <div class="question">During which occupancy period can hotels charge the highest prices?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">Peak period</div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="practice-question">
+            <div class="question">What happens to a $150 discounted room rate if rates increase by 5% annually?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">It becomes $157.50</div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="practice-question">
+            <div class="question">How are properties likely to limit the length of tentative holds?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">By designating an option date</div>
+        </div>
+
+        <h3>Convention and Meeting Management Questions</h3>
+
+        <!-- Question 8 -->
+        <div class="practice-question">
+            <div class="question">When should convention service managers assume the role of primary hotel contact person?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">After the sale is made</div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="practice-question">
+            <div class="question">What are examples of corporate meetings?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">Sales meetings, product meetings, technical meetings, and management meetings</div>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="practice-question">
+            <div class="question">What type of meeting is designed as a reward for excellent performance?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">Incentive meetings</div>
+        </div>
+
+        <h3>Function Rooms and Event Space Questions</h3>
+
+        <!-- Question 11 -->
+        <div class="practice-question">
+            <div class="question">What is the most important feature of function room furniture?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">Flexibility</div>
+        </div>
+
+        <!-- Question 12 -->
+        <div class="practice-question">
+            <div class="question">What is an example of special effects lighting?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">Gobo lights</div>
+        </div>
+
+        <h3>Food and Beverage Service Questions</h3>
+
+        <!-- Question 13 -->
+        <div class="practice-question">
+            <div class="question">What is typically the most profitable area of the Food and Beverage department?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">Banquets</div>
+        </div>
+
+        <!-- Question 14 -->
+        <div class="practice-question">
+            <div class="question">What is the most common form of banquet service?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">American/plated service</div>
+        </div>
+
+        <!-- Question 15 -->
+        <div class="practice-question">
+            <div class="question">For F&B products, what two billing components refer to "plus, plus" ($++)?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">Tax and service charge</div>
+        </div>
+
+        <!-- Question 16 -->
+        <div class="practice-question">
+            <div class="question">Why do meeting planners include food function prices in contracts a year in advance?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">To make budget projections easier</div>
+        </div>
+
+        <h3>Contract and Financial Management Questions</h3>
+
+        <!-- Question 17 -->
+        <div class="practice-question">
+            <div class="question">What does a contract or letter of agreement protect?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">Both the hotel and the meeting group</div>
+        </div>
+
+        <!-- Question 18 -->
+        <div class="practice-question">
+            <div class="question">What form specifies the limit of financial responsibility a meeting group will accept?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">Master account billing authorization form</div>
+        </div>
+
+        <h3>Association Meetings Questions</h3>
+
+        <!-- Question 19 -->
+        <div class="practice-question">
+            <div class="question">Is attendance at association meetings required?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">No, attendance is generally not required</div>
+        </div>
+
+        <h3>Exhibit and Trade Show Questions</h3>
+
+        <!-- Question 20 -->
+        <div class="practice-question">
+            <div class="question">What type of booth has aisles on all four sides?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">Island booth</div>
+        </div>
+
+        <!-- Question 21 -->
+        <div class="practice-question">
+            <div class="question">What do exhibitors typically feel about exhibit scheduling?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">Delegates should have free time from meetings during the day to browse through the exhibit area</div>
+        </div>
+
+        <h3>Property Analysis and Selection Questions</h3>
+
+        <!-- Question 22 -->
+        <div class="practice-question">
+            <div class="question">What does a CVB typically do when it learns a group has selected its city?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">Sends convention lead forms to member hotels</div>
+        </div>
+
+        <!-- Question 23 -->
+        <div class="practice-question">
+            <div class="question">What lends a property credibility in the eyes of the public?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">When publicity appears to come from an impartial third party</div>
+        </div>
+
+        <!-- Question 24 -->
+        <div class="practice-question">
+            <div class="question">What is simultaneous interpretation?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">When a speaker addresses a group while someone in a soundproof booth translates</div>
+        </div>
+
+        <!-- Question 25 -->
+        <div class="practice-question">
+            <div class="question">Which of the following is NOT one of the top 5 areas of importance to an association meeting planner?</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)"><i class="fas fa-eye"></i> Show Answer</button>
+            <div class="answer">Proximity to shopping and entertainment</div>
+        </div>
+    </div>
+
+    <div class="highlight-box">
+        <h3>Exam Success Tips:</h3>
+        <ul>
+            <li>Review key terms and concepts regularly rather than cramming the night before</li>
+            <li>Create flashcards for definitions and important concepts</li>
+            <li>Form study groups to discuss and explain concepts to each other</li>
+            <li>Practice applying concepts to real-world scenarios</li>
+            <li>Take practice tests to identify areas that need more attention</li>
+        </ul>
+        <p><strong>Print this Study Guide:</strong> This page is formatted to print nicely. All practice questions will automatically show answers when printing.</p>
+    </div>
+
+    <div class="footer">
+        <span>EVENT 3710 - Spring 2025</span>
+        <span>Iowa State University</span>
+    </div>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+    
+    <!-- Dark mode toggle -->
+    <div class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></div>
+
+    <script>
+        // Toggle answer visibility
+        function toggleAnswer(button) {
+            const answer = button.nextElementSibling;
+            if (answer.classList.contains('show')) {
+                answer.classList.remove('show');
+                button.innerHTML = '<i class="fas fa-eye"></i> Show Answer';
+            } else {
+                answer.classList.add('show');
+                button.innerHTML = '<i class="fas fa-eye-slash"></i> Hide Answer';
+            }
+        }
+        
+        // Back to top button visibility
+        window.onscroll = function() {
+            scrollFunction();
+            updateProgressBar();
+        };
+        
+        function scrollFunction() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                document.getElementById("backToTop").classList.add("visible");
+            } else {
+                document.getElementById("backToTop").classList.remove("visible");
+            }
+        }
+        
+        // Progress bar
+        function updateProgressBar() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+        }
+        
+        // Active navigation link
+        const sections = document.querySelectorAll('.topic-container');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Dark mode toggle
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+        
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        
+        // Progress tracker
+        const checkboxes = document.querySelectorAll('.progress-checkbox');
+        const progressBarFill = document.getElementById('progressBarFill');
+        const progressPercentage = document.getElementById('progressPercentage');
+        const resetProgress = document.getElementById('resetProgress');
+        
+        function updateProgress() {
+            const totalChecked = Array.from(checkboxes).filter(checkbox => checkbox.checked).length;
+            const totalCheckboxes = checkboxes.length;
+            const percentage = Math.round((totalChecked / totalCheckboxes) * 100);
+            
+            progressBarFill.style.width = percentage + '%';
+            progressPercentage.textContent = percentage + '% Complete';
+            
+            // Save progress to localStorage
+            checkboxes.forEach(checkbox => {
+                localStorage.setItem(checkbox.id, checkbox.checked);
+            });
+        }
+        
+        // Load saved progress
+        checkboxes.forEach(checkbox => {
+            const saved = localStorage.getItem(checkbox.id);
+            if (saved === 'true') {
+                checkbox.checked = true;
+            }
+            checkbox.addEventListener('change', updateProgress);
+        });
+        
+        // Reset progress
+        resetProgress.addEventListener('click', () => {
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+                localStorage.removeItem(checkbox.id);
+            });
+            updateProgress();
+        });
+        
+        // Initialize progress on page load
+        updateProgress();
+        
+        // Initialize scroll position for navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return; // Skip "back to top" links
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const navbarHeight = document.getElementById('navBar').offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 20;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
